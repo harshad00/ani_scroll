@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <!-- <svg viewBox="0 0 259 3893" fill="none" preserveAspectRatio="xMidYmax meet">
+            <path
+                d="M142.5 1L149.5 1188.5L66 1241L3 1278.5V1199.5L116 1278.5H189.5L254 1233L207 1199.5L164 1188.5V2340H180V2349.5L217.5 2373.5V2398H193.5L200 2502.5L217.5 2526.5H180L152 2455.5L138.5 2467.5L158.5 2521H83.5H27.5L6 2467.5L54 2446L44.5 2411H125L105 3640.5L142.5 3624.5L177.5 3675.5L105 3745L32.5 3675.5L48.5 3624.5L94.5 3640.5V3892.5"
+                stroke="#990404" stroke-width="6" />
+        </svg> -->
+        <svg  viewBox="0 0 1014 6845" fill="none" preserveAspectRatio="xMidYmax meet">
+            <path d="M514.315 1C542.038 405 579.615 500.667 594.938 498H976.126L1003 603L976.126 703L892.675 811L743.453 892L594.938 911H449.252L350.242 1075.5L270.327 911L3 870.5L270.327 811L304.273 676L350.242 603L514.315 514L529.521 1197L544.726 1880C537.418 1880 537.229 1880 594.938 1880C652.646 1880 697.719 1894.33 713.042 1901.5L789.422 1923L824.075 1950L892.675 1990.5L934.4 2039L972.59 2098.5V2147V2201L934.4 2263L878.53 2326L790.836 2378.5L671.317 2415L545.433 2424.5L404.697 2406.5L287.3 2360L217.286 2305.5L167.074 2242L148.686 2181.5L143.028 2147L148.686 2117.5L167.074 2061L184.754 2039L211.628 2008L235.673 1984.5L275.277 1955.5L319.832 1932.5L369.337 1912L423.085 1896L486.027 1887H531.289L594.938 1896L690.412 1912L755.475 1939.5L795.786 1963L840.341 2001L881.359 2039L901.161 2078.5L913.184 2130.5V2181.5L881.359 2236L840.341 2305.5L773.156 2350L658.587 2378.5L545.433 2383L430.157 2370.5L360.143 2332L301.444 2281.5L245.574 2219.5L217.286 2161.5V2123.5L230.016 2086.5L261.133 2048.5L304.273 2004L336.805 1984.5L369.337 1970C367.922 1966.83 374.711 1958.4 413.184 1950C474.853 1938 517.616 1933.33 531.289 1932.5H559.577L501.586 3319L388.431 3506.5L114.74 3533.5L301.444 3670.5L257.597 3884.5L501.586 3781C583.622 3815.5 746.423 3884.5 741.331 3884.5C736.239 3884.5 705.263 3749.5 690.412 3682L884.895 3533.5L620.397 3506.5L531.289 3362.5L501.586 4647L923.085 5380.5H34.8246L448.545 4678.5L490.27 4687.5C390.317 5233.5 259.86 6326.4 537.653 6330C815.447 6333.6 899.511 6348.17 906.819 6355V6820.5L159.294 6834V6355H537.653H840.341V6780H537.653C430.393 6780 215.306 6780 213.042 6780C210.214 6780 213.042 6775.5 213.042 6586.5C213.042 6435.3 391.26 6397.5 480.369 6397.5C539.775 6397.5 672.59 6397.5 728.601 6397.5C798.615 6397.5 776.692 6496.5 783.057 6568.5C788.149 6626.1 772.448 6682.5 763.962 6703.5H509.365" stroke="#C12222" stroke-width="20"/>
+            </svg>
+            
+            
+    </div>
+    
+    <section class="one"> 
+
+        <h1 class="scroll">ocean stuff</h1>
+    </section>
+
+    <section class="two">
+        <h1 class="scroll" > omg scroll</h1>
+        <p>big watermark</p>
+    </section>
+
+   
+     <script>
+            let path = document.querySelector("path")
+            let pathLength = path.getTotalLength()
+
+        path.style.strokeDasharray = pathLength+ " " + pathLength;
+
+        path.style.strokeDashoffset = pathLength;
+
+        window.addEventListener("scroll", ()=>{
+            //  what % down is it?
+
+            var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight -  document.documentElement.clientHeight);
+
+            // Lenght to offser the dashes
+
+            var drawLength = pathLength * scrollPercentage;
+
+            // Draw in reverse
+
+            path.style.strokeDashoffset = pathLength - drawLength ;
+
+           
+        })
+
+     </script>
+</body>
+
+</html>
